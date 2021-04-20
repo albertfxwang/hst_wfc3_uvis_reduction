@@ -37,12 +37,13 @@ def remove_badpix_main(proc_dir):
         The absolute path of the directory to process.
     """
 
-    # proc_dir_short = proc_dir.split('uvis_darks/')[1]     <<200909>> commented by XW
+    # LP edit, not the same directory now
+    # proc_dir_short = proc_dir.split('uvis_darks/')[-1]
 
     logging.info('')
     logging.info('')
     logging.info('')
-    logging.info('---------- Removing non-cosmic ray flags for {} ----------'.format(proc_dir))     # <<200909>> modified by XW
+    logging.info('---------- Removing non-cosmic ray flags for {} ----------'.format(proc_dir))   #LP edit: removed proc_dir_short
     logging.info('')
 
     blvs = glob.glob(os.path.join(proc_dir, '*blv_tmp.fits'))
